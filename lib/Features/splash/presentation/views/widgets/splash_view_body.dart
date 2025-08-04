@@ -1,8 +1,42 @@
+import 'package:bookly_app/Features/splash/presentation/views/widgets/sliding_text.dart';
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 
-class SplashViewBody extends StatelessWidget {
+class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
+
+  @override
+  State<SplashViewBody> createState() => _SplashViewBodyState();
+}
+
+class _SplashViewBodyState extends State<SplashViewBody>
+    with SingleTickerProviderStateMixin {
+  late AnimationController animationController;
+  late Animation<Offset> slidingAnimation;
+
+  @override
+  void initState() {
+    animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1), // مدة الأنميشن
+    );
+
+    slidingAnimation = Tween<Offset>(
+      begin: const Offset(0, 2),
+      end: Offset.zero,
+    ).animate(animationController);
+
+    animationController.forward();
+    // تبدأ تشغيل الأنميشن (من البداية للنهاية)
+
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -13,12 +47,22 @@ class SplashViewBody extends StatelessWidget {
       children: [
         Image.asset(AssetsData.Logo),
         const SizedBox(height: 8),
-        Text(
-          'Read Free Books',
-          style: TextStyle(fontSize: 18),
-          textAlign: TextAlign.center,
-        ),
+        SlidingText(slidingAnimation: slidingAnimation),
       ],
     );
   }
 }
+
+/* SingleTickerProviderStateMixin 
+هي لتمكين الرسوم المتحركة في هذه الودجة
+vsync يجعل الكلاس قادر على إدارة أنميشن واحد بكفاءة باستخدام 
+
+AnimationController: 
+ هذا المتحكم الأساسي في الرسوم المتحركة: يحدد المدة ويبدأ/يوقف الأنميشن.
+
+Animation<Offset>:
+  هذا هو نوع الأنميشن الذي نستخدمه هنا، وهو يحرك عنصرًا على المحورين x و y.
+  هذا هو "قيمة" الأنميشن الفعلية التي تتغير من نقطة إلى أخرى (هنا: تحريك عنصر على المحور y).
+
+Tween<Offset>:
+controller هذا هو الكائن الذي يحدد بداية ونهاية الرسوم المتحركةثم تربط الحركة بالـ */
