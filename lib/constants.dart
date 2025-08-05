@@ -6,3 +6,5 @@ const kTransitionDuration = Duration(milliseconds: 250);
 // مدة الانتقال بين الصفحات
 
 const kGTSectraFineRegular = 'GT Sectra Fine Regular';
+
+const kPadding = EdgeInsets.symmetric(horizontal: 30);
