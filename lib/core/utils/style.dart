@@ -31,3 +31,5 @@ abstract class Styles {
     fontFamily: kGTSectraFineRegular,
   );
 }
+
+// بنسبة للون ونوع الخط هذة مش مهمة تعديها مكان الاستخدامهنا تكتب الشائع المكرر فقط
