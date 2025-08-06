@@ -1,28 +1,28 @@
+import 'package:bookly_app/Features/home/presentation/views/book_details_view.dart';
 import 'package:bookly_app/Features/home/presentation/views/home_view.dart';
 import 'package:bookly_app/Features/splash/presentation/views/splash_view.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
-  static const String ksplashView = '/';
+  static const String ksplashView = '/'; //  👈 الصفحة الرئيسة للتطبيق
   static const String khomeView = '/HomeView';
+  static const String kBookDetailsView = '/BookDetailsView';
 
   static final GoRouter router = GoRouter(
-    initialLocation:
-        '/', // 👈 اجعل التطبيق يفتح مباشرة على صفحة معينة
+    initialLocation: '/',
+    // 👈 اجعل التطبيق يفتح مباشرة على صفحة معينة initialLocation
     routes: [
       GoRoute(
         path: ksplashView,
-        builder: (context, state) {
-          return const SplashView();
-        },
-        routes: <RouteBase>[
-          GoRoute(
-            path: khomeView,
-            builder: (context, state) {
-              return const HomeView();
-            },
-          ),
-        ],
+        builder: (context, state) => const SplashView(),
+      ),
+      GoRoute(
+        path: khomeView,
+        builder: (context, state) => const HomeView(),
+      ),
+      GoRoute(
+        path: kBookDetailsView,
+        builder: (context, state) => const BookDetailsView(),
       ),
     ],
   );
