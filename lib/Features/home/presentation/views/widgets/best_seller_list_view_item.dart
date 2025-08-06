@@ -50,10 +50,8 @@ class BestSellerListViewItem extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 3),
-
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
                   children: [
                     Text(
                       '19.99 \$',
