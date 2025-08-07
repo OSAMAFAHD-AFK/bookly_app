@@ -27,25 +27,16 @@ class HomeViewBody extends StatelessWidget {
             ],
           ),
         ),
-        SliverFillRemaining(child: BestSellerListView()),
+        SliverPadding(
+          padding: kPadding,
+          sliver: BestSellerListView(),
+        ),
       ],
     );
   }
 }
 
-/*✅ 1. SliverFillRemaining
-📌 المعنى:
-تملأ المساحة المتبقية في الشاشة بما بداخلها (مثل Expanded لكن في slivers).
-
-📌 ليش نستخدمها؟
-عشان تخلي مثلاً الـ ListView يأخذ باقي الشاشة تحت الـ AppBar و الـ FeaturedBooks.
-
-🧠 ببساطة:
-"كل المساحة اللي بقيت في الشاشة بعد العناصر اللي فوق؟ حط فيها هذا الودجت."
-
---------------------------------------
-
-✅ 2. CustomScrollView
+/*✅ 2. CustomScrollView
 📌 المعنى:
 بديل متطور لـ SingleChildScrollView، لكنه يدعم أنواع مختلفة من العناصر تسمى Slivers.
 
