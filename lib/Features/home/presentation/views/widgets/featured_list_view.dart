@@ -17,10 +17,17 @@ class FeaturedBooksListViwe extends StatelessWidget {
             height: MediaQuery.of(context).size.height * 0.26,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
+              itemCount: state.books.length,
               itemBuilder: (context, index) {
-                return const Padding(
+                return Padding(
                   padding: EdgeInsets.symmetric(horizontal: 8),
-                  child: CustomBookImageItem(),
+                  child: CustomBookImageItem(
+                    imageUrl: state
+                        .books[index]
+                        .volumeInfo
+                        .imageLinks
+                        .thumbnail,
+                  ),
                 );
               },
             ),
