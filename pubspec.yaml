@@ -29,8 +29,9 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   cupertino_icons: ^1.0.8
-  dartz: ^0.10.1 # من اجل استخدم الكلاس التي ترجع اكثر من نوع داتا تايب
-  equatable: ^2.0.7 # من اجل نستخدم الموديل الذي انشاءناة
+  dartz: ^0.10.1
+  dio: ^5.9.0
+  equatable: ^2.0.7
   flutter:
     sdk: flutter
   flutter_svg: ^2.2.0
