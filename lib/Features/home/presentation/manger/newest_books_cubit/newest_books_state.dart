@@ -9,7 +9,7 @@ sealed class NewestBooksState extends Equatable {
 
 final class NewestBooksInitial extends NewestBooksState {}
 
-final class FNewestBooksLoading extends NewestBooksState {}
+final class NewestBooksLoading extends NewestBooksState {}
 
 final class NewestBooksFailure extends NewestBooksState {
   final String errMessage;
