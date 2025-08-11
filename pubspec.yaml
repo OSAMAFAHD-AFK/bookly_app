@@ -29,6 +29,7 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   cupertino_icons: ^1.0.8
+  equatable: ^2.0.7 # هذة علشان نستخدم الموديل الذي انشاءناه
   flutter:
     sdk: flutter
   flutter_svg: ^2.2.0
@@ -62,9 +63,9 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: GT Sectra Fine Regular
+    - family: Pacifico-Regular
       fonts:
-        - asset: assets/fonts/GT Sectra Fine Regular.ttf
+        - asset: assets/fonts/Pacifico-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
