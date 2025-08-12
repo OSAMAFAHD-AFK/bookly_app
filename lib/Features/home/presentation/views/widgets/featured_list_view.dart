@@ -22,11 +22,13 @@ class FeaturedBooksListViwe extends StatelessWidget {
                 return Padding(
                   padding: EdgeInsets.symmetric(horizontal: 8),
                   child: CustomBookImageItem(
-                    imageUrl: state
-                        .books[index]
-                        .volumeInfo
-                        .imageLinks
-                        .thumbnail,
+                    imageUrl:
+                        state
+                            .books[index]
+                            .volumeInfo
+                            .imageLinks
+                            ?.thumbnail ??
+                        '',
                   ),
                 );
               },
