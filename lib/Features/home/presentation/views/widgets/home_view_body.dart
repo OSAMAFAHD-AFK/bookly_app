@@ -1,4 +1,4 @@
-import 'package:bookly_app/Features/home/presentation/views/widgets/best_seller_list_view.dart';
+import 'package:bookly_app/Features/home/presentation/views/widgets/newset_books_list_view.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/featured_list_view.dart';
 import 'package:bookly_app/constants.dart';
@@ -21,7 +21,10 @@ class HomeViewBody extends StatelessWidget {
               SizedBox(height: 40),
               Padding(
                 padding: kPadding,
-                child: Text('Best Seller', style: Styles.textStyle18),
+                child: Text(
+                  'Newset Books',
+                  style: Styles.textStyle18,
+                ),
               ),
               SizedBox(height: 20),
             ],
@@ -29,7 +32,7 @@ class HomeViewBody extends StatelessWidget {
         ),
         SliverPadding(
           padding: kPadding,
-          sliver: BestSellerListView(),
+          sliver: NewsetBooksListView(),
         ),
       ],
     );
