@@ -70,9 +70,9 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Pacifico-Regular
+    - family: GT Sectra Fine Regular
       fonts:
-        - asset: assets/fonts/Pacifico-Regular.ttf
+        - asset: assets/fonts/GT Sectra Fine Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

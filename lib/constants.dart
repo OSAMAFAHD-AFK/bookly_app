@@ -5,6 +5,6 @@ const kPrimaryColor = Color(0xfff100b20);
 const kTransitionDuration = Duration(milliseconds: 250);
 // مدة الانتقال بين الصفحات
 
-const kGTSectraFineRegular = 'Pacifico-Regular';
+const kGTSectraFineRegular = 'GT Sectra Fine Regular';
 
 const kPadding = EdgeInsets.symmetric(horizontal: 30);
