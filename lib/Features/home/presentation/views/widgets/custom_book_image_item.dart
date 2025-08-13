@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/widgets/shimmer_box.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
@@ -13,20 +14,13 @@ class CustomBookImageItem extends StatelessWidget {
         child: CachedNetworkImage(
           imageUrl: imageUrl,
           fit: BoxFit.fill,
-          placeholder: (context, url) =>
-              const Center(child: CircularProgressIndicator()),
+          placeholder: (context, url) => const ShimmerBox(
+            width: double.infinity,
+            height: double.infinity,
+          ),
           errorWidget: (context, url, error) =>
               const Icon(Icons.error),
         ),
-        // child: Container( // هذا الحل القديم السيئ
-        //   decoration: BoxDecoration(
-        //     borderRadius: BorderRadius.circular(16),
-        //     image: DecorationImage(
-        //       image: NetworkImage(imageUrl),
-        //       fit: BoxFit.fill,
-        //     ),
-        //   ),
-        // ),
       ),
     );
   }

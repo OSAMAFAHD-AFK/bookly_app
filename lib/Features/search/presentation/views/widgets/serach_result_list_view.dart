@@ -1,7 +1,7 @@
-import 'package:bookly_app/Features/home/presentation/views/widgets/book_list_view_item.dart';
+import 'package:bookly_app/core/widgets/book_list_view_item.dart';
 import 'package:bookly_app/Features/search/presentation/manger/search_or_default_books/search_or_default_books_cubit.dart';
+import 'package:bookly_app/Features/search/presentation/views/widgets/serach_result_list_view_shimmer.dart';
 import 'package:bookly_app/core/widgets/custom_error_widget.dart';
-import 'package:bookly_app/core/widgets/custom_loading_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -31,7 +31,7 @@ class SerachResultListView extends StatelessWidget {
         } else if (state is SearchOrDefaultBooksFailure) {
           return CustomErrorWidget(errMessage: state.errMessage);
         } else {
-          return const CustomLoadingIndicator();
+          return const SerachResultListViewShimmer(itemCount: 6);
         }
       },
     );
