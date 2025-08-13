@@ -12,7 +12,7 @@ class SerachResultListView extends StatelessWidget {
       itemBuilder: (context, index) {
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 10),
-          child: Text('const BookListViewItem(bookModel: ,)'),
+          child: Text('  BookListViewItem(bookModel: ,)'),
         );
       },
     );
