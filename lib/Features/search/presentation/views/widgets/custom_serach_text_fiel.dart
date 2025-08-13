@@ -11,20 +11,32 @@ class CustomSerachTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     String? nameBook;
     return TextField(
-      onChanged: (value) => nameBook = value,
+      onChanged: (value) {
+        nameBook = value;
+        if (value.isEmpty) {
+          searchBooks(context, nameBook);
+        }
+      },
+      onSubmitted: (value) {
+        searchBooks(context, value);
+      },
       decoration: InputDecoration(
         enabledBorder: buildOutlineInputBorder(),
         focusedBorder: buildOutlineInputBorder(),
         hintText: 'Serach',
         suffixIcon: IconButton(
           onPressed: () {
-            context.read<SearchOrDefaultBooksCubit>().searchBooks(
-              query: nameBook ?? '',
-            );
+            searchBooks(context, nameBook);
           },
           icon: SvgPicture.asset(AssetsData.search, height: 35),
         ),
       ),
+    );
+  }
+
+  void searchBooks(BuildContext context, String? value) {
+    context.read<SearchOrDefaultBooksCubit>().searchBooks(
+      query: value ?? '',
     );
   }
 
