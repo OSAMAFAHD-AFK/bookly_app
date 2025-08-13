@@ -1,5 +1,7 @@
+import 'package:bookly_app/Features/search/presentation/manger/search_or_default_books/search_or_default_books_cubit.dart';
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 
 class CustomSerachTextField extends StatelessWidget {
@@ -7,13 +9,19 @@ class CustomSerachTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String? nameBook;
     return TextField(
+      onChanged: (value) => nameBook = value,
       decoration: InputDecoration(
         enabledBorder: buildOutlineInputBorder(),
         focusedBorder: buildOutlineInputBorder(),
         hintText: 'Serach',
         suffixIcon: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            context.read<SearchOrDefaultBooksCubit>().searchBooks(
+              query: nameBook ?? '',
+            );
+          },
           icon: SvgPicture.asset(AssetsData.search, height: 35),
         ),
       ),

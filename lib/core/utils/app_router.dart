@@ -1,3 +1,5 @@
+import 'package:bookly_app/Features/search/data/repos/search_repo_impl.dart';
+import 'package:bookly_app/Features/search/presentation/manger/search_or_default_books/search_or_default_books_cubit.dart';
 import 'package:bookly_app/core/models/books_models/item.dart';
 import 'package:bookly_app/Features/home/data/repos/home_repo_impl.dart';
 import 'package:bookly_app/Features/home/presentation/manger/similar_books_cubit/similar_books_cubit.dart';
@@ -37,7 +39,12 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kSerachView,
-        builder: (context, state) => const SerachView(),
+        builder: (context, state) => BlocProvider(
+          create: (context) =>
+              SearchOrDefaultBooksCubit(getIt.get<SearchRepoImpl>())
+                ..fetchDefaultBooks(),
+          child: const SerachView(),
+        ),
       ),
     ],
   );
